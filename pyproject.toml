@@ -5,7 +5,7 @@ description = "Build easy data processing pipelines in python."
 authors = [
     {name = "Paul Frische", email = "paul@paulfrische.xyz"},
 ]
-dependencies = []
+dependencies = ["pytest"]
 requires-python = ">=3.4"
 readme = "README.md"
 license = {text = "MIT"}
