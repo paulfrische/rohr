@@ -38,7 +38,7 @@ class Pipeline:
         """
         result = data
         for node in self.nodes:
-            result = node.run(data)
+            result = node.run(result)
 
         return result
 
