@@ -9,7 +9,7 @@ class Node(ABC):
     Abstract Node class, to create nodes inherit from this class.
     """
     @abstractmethod
-    def run(self, data) -> None:
+    def run(self, data):
         """
         Method to process given data.
         """
