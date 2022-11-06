@@ -23,9 +23,9 @@ class Pipeline:
         """
         Construct pipeline with given nodes.
         """
-        self.nodes: list[Node] = list(args)
+        self.nodes: list[Node|callable] = list(args)
 
-    def add(self, node: Node) -> 'Pipeline':
+    def add(self, node: [Node,callable]) -> 'Pipeline':
         """
         Add node to pipeline.
         """
@@ -38,7 +38,10 @@ class Pipeline:
         """
         result = data
         for node in self.nodes:
-            result = node.run(result)
+            if isinstance(node, Node):
+                result = node.run(result)
+            else:
+                result = node(result)
 
         return result
 
